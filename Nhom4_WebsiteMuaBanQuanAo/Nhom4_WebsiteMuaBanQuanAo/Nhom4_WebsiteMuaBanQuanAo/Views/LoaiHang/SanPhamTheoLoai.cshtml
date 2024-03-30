@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewBag.Title = "SanPhamTheoLoai";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    @foreach (var item in Model)
+    {
+        <div class="col">
+            <div class="card" style="text-align:center; height: 600px;">
+                <img src="@Url.Content("/Image/" + item.ANHBIA)" style="width:450px;height:500px;" alt="" />
+                @if (item.TENHANG.Length > 30)
+                {
+                    <p>
+                        <strong title="@item.TENHANG">@item.TENHANG.Substring(0, 30)...</strong><br />
+                        <a href="@Url.Action("XemChiTiet","Home", new { @ms = item.MAHANG })">Xem chi tiết</a>
+                    </p>
+                }
+                else
+                {
+                    <p>
+                        <strong title="@item.TENHANG">@item.TENHANG</strong><br />
+                        <div style="position: relative;width: 100px; height: 40px; border: 1px solid black; background: #34e6d0; border-radius: 8px; cursor: pointer; margin-left:195px;">
+                            <a href="@Url.Action("XemChiTiet", "Home", new { @ms = item.MAHANG })" style="text-decoration:none; color: white; position:absolute; left: 7px; top: 4px;">Xem chi tiết</a>
+                        </div>
+                    </p><div class="clear"></div>
+                }
+            </div>
+        </div>
+    }
+</div>

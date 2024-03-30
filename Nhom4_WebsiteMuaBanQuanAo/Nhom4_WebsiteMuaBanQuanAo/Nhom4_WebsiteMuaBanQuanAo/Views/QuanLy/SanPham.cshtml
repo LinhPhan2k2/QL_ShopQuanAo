@@ -1,0 +1,72 @@
+﻿@*@model IEnumerable<Nhom4_WebsiteMuaBanQuanAo.Models.SanPham>*@
+@using PagedList.Mvc;
+@using PagedList;
+@model IPagedList<Nhom4_WebsiteMuaBanQuanAo.Models.SanPham>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "SanPham";
+    Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Danh sách sản phẩm</h1>
+        <p>
+            @Html.ActionLink("tạo sản phẩm", "AddSanPham", "", new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>
+<table class="table" >
+    <tr>
+        <th>
+           Mã sản phẩm
+        </th>
+        <th>
+            Tên sản phẩm
+        </th>
+        <th>
+            Tên loại
+        </th>
+        <th>
+            Số lượng
+        </th>
+        <th>
+            Đơn giá
+        </th>
+        <th>
+            Ảnh bìa
+        </th>
+        <th></th>
+    </tr>
+    @if (Model != null && Model.Any())
+    {
+        var i = 1;
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.MaHang</td>
+                    <td>@item.TenHang</td>
+                    <td>@item.MaLoai</td>
+                    <td>@item.SLKho</td>
+                    <td>@item.DonGia</td>
+                    <td>
+                        <img src="/Image/@item.AnhBia" style="width:auto;height:100px;" class="card-img-top" alt="...">
+                    </td>
+                    <td>
+                        @Html.ActionLink("Sửa", "UpdateSanPham", new { ma = item.MaHang }, new { @class = "btn btn-primary" }) |
+                        @Html.ActionLink("Xóa", "DeleteSanPham", new { ma = item.MaHang }, new { @class = "btn btn-danger" })
+                    </td>
+                </tr>
+                i++;
+               
+            }
+        </tbody>
+    }
+
+</table>
+<br />
+<center>
+    @Html.PagedListPager(Model, page => Url.Action("Index",
+    new { page, pageSize = 10 }))
+</center>

@@ -1,0 +1,121 @@
+﻿body{
+    font-family: Arial, Tahoma;
+    font-size: 12px;
+    text-decoration:none;
+    background-image: url("../../common/images/tp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;  
+}
+
+#main{
+    width: 100%;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#head{
+    height: 100px;
+    background-color: rgba(17,17,17,0.75);
+    border: 1px solid #CDCDCD;
+    margin-bottom:5px;
+}
+
+#content{
+    width: 1400px;
+    min-height: 600px;
+    border: 1px solid #CDCDCD;
+    float:left;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    background-image: url("../../common/images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;  
+}
+#right{
+    width: 234px;
+    min-height: 600px;
+    border: 1px solid #CDCDCD;
+    float:right;
+    margin-bottom: 5px;
+}
+
+#footer{
+    height: 100px;
+    clear: both;
+    border: 1px solid #CDCDCD;
+    background-color: rgba(17,17,17,0.75);
+    color: white;
+    line-height: 5px;
+    text-align:center;
+}
+
+
+#head-link{
+    height: 60px;
+    line-height: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 1px solid #CDCDCD;
+    background-color: rgba(17,17,17,0.75);
+    margin-bottom:5px;
+    clear: both;
+}
+
+    #head-link a {
+        text-decoration:none;
+        padding-bottom:5px;
+        padding-left: 10px;
+        color: #fff;
+    }
+
+.sign #password {
+    margin-left: 26px;
+}
+
+.button_details{
+    position: relative;
+    width: 100px; 
+    height: 40px; 
+    border: 1px solid none; 
+    background: #34e6d0; 
+    border-radius: 8px; 
+    cursor: pointer;
+    margin-left:145px;
+}
+
+
+          /*RESPONSIVE */           
+
+@media only screen and (max-width: 1585px){
+    #content{
+    width: 900px;
+    min-height: 500px;
+    } 
+    .button_details{
+        margin-left:125px;
+    }
+}
+
+@media only screen and (max-width: 1329px){
+    #content{
+    width: 1000px;
+    min-height: 500px;
+    } 
+    .button_details{
+        margin-left:95px;
+    }
+}
+
+@media only screen and (max-width: 1091px){
+    #content{
+    width: 800px;
+    min-height: 500px;
+    } 
+    .button_details{
+        margin-left:55px;
+    }
+}

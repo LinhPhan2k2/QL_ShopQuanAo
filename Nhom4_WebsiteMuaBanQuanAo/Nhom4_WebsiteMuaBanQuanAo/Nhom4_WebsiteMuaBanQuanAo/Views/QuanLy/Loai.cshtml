@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Nhom4_WebsiteMuaBanQuanAo.Models.Loai>
+
+@{
+    ViewBag.Title = "Loai";
+    Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
+}
+
+<div class="container-fluid">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Quản lý Loại Sản Phẩm</h1>
+        <p>
+            @Html.ActionLink("tạo Loại", "AddLoai", "", new { @class = "btn btn-primary" })
+        </p>
+    </div>
+</div>
+
+<table class="table">
+    <tr>
+        <th>
+           Mã loại
+        </th>
+        <th>
+            Tên loại
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.MaLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TenLoai)
+        </td>
+        <td>
+            @Html.ActionLink("Sửa", "UpdateLoai", new { ma = item.MaLoai }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Xóa", "DeleteLoai", new { ma = item.MaLoai }, new { @class = "btn btn-danger" })
+        </td>
+    </tr>
+}
+
+</table>

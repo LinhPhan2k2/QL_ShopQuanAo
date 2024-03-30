@@ -1,0 +1,55 @@
+﻿@using Nhom4_WebsiteMuaBanQuanAo.Models;'
+@model LoginModel
+@{
+    Layout = null;
+}
+
+@*<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>*@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="~/Assets/css.css" rel="stylesheet" id="bootstrap-css">
+    <title>Trang đăng nhập</title>
+    <link rel="shortcut icon" href="~/Image/logobird.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container h-100">
+        <div class="d-flex justify-content-center h-100">
+            <div class="user_card">
+                <div class="d-flex justify-content-center">
+                    <div class="brand_logo_container">
+                        <img src="/Image/logobird.png" class="brand_logo" alt="Logo">
+                    </div>
+                </div>
+                @using (Html.BeginForm("Index", "Login", FormMethod.Post))
+                {
+                    <br />
+                    if (ViewBag.error != null)
+                    {
+                        <span style="color:red; background-color:yellow; margin-left:50px;">@ViewBag.error</span>
+                    }
+                    <div class="input-field">
+                        <label for="username">Tài Khoản</label>
+                        @Html.TextBoxFor(m => m.Username, new { @class = "form-control", @required = "required", @autofocus = "autofocus" })
+
+                    </div>
+                    <div class="input-field">
+                        <label for="password">Mật Khẩu</label>
+                        @Html.PasswordFor(m => m.Password, new { @class = "form-control", @required = "required" })
+
+                    </div>
+                    <br />
+                    <div class="login-btn" style="margin-left:130px">
+                        <button type="submit" class="btn waves-effect waves-light green darken-4">Login</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</body>
+</html>

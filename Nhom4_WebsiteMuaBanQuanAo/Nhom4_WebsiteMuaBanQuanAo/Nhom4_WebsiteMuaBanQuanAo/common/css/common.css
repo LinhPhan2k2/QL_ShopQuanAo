@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+/*trên là cỡ chữ kiếm trong gg font*/
+
+html{
+    scroll-behavior: smooth;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+button,
+input{
+    border: none;
+    outline: none;
+}
+
+button{
+    cursor: pointer;
+}
+
+section {
+    width: 100%;
+    /* background: #252e38; */
+    /* background-image: url("../common/images/1.jpg"); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.menu
+{
+	width:100%;
+	float:right;
+	height: 70px;
+	background-color: rgba(17,17,17,0.75);
+}
+.menu ul
+{
+	list-style:none;
+
+}
+.menu ul li
+{
+	float:left;
+	position:relative;
+}
+.menu ul li a
+{
+	text-decoration:none;
+	line-height:50px;
+	display:block;
+	padding: 10px 20px;
+	margin: 0 1px;
+	font-size:20px;
+	clear:both;
+    color: #fff;
+	font-size: 14px;
+    margin: 0 15px !important;
+}
+.menu ul li a:hover
+{
+	text-shadow: 0 0 10px #69e0ff, 0 0 20px #69e0ff, 0 0 40px #69e0ff;
+    color: #fff;
+}
+.lm ul
+{
+	position:absolute; top:85px; left: -40px;
+}
+.lq ul li
+{
+	clear:both;
+    width: 230px;
+}
+.lm ul li
+{
+	clear:both;
+    width: 240px;
+}
+
+.gs ul li
+{
+	clear:both;
+    width: 190px;
+}
+
+.pubg ul li
+{
+	clear:both;
+    width: 175px;
+}
+
+.menu ul ul
+{
+	position:absolute; top:70px; left: -40px;
+}
+
+.menu ul ul li a
+{
+	padding:10px;
+	background-color: rgba(17,17,17,0.75);
+	line-height:40px;
+}
+.menu ul ul
+{
+	visibility:hidden;
+}
+.menu ul li:hover > ul
+{
+    clear: both;
+	visibility:visible;
+}
+.logonew img
+{
+	float:left;
+	width:110px;
+	height: 80px;
+    clear: both;
+}
+
+form {
+	position: relative;
+	width: 500px;
+	max-width: 100%;
+}
+
+form button {
+	position: absolute;
+	background-color: #8d56fd;
+	border: 0;
+	border-radius: 5px;
+	left: 200px;
+	color: #fff;
+	font-size: 14px;
+	padding: 9px 30px;
+}
+  
+
+.container-common{
+    width: 100%;
+    padding: 70px 110px;
+    height: 964px;
+    overflow: hidden;
+    /* background: #252e38; */
+    background-image: url("../../common/images/nice.jpg");
+}
+
+.container-home{
+    position: relative;
+    width: 100%;
+    /* padding: 0 100px; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 50vh;
+}
+
+.container-home header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 100px;
+}
+
+.container-home header .logo{
+    font-weight: 700;
+    text-transform: uppercase;
+    color:rgb(70, 70, 235);
+    font-size: 1.8em;
+    text-decoration: none;
+}
+
+.container-home header ul
+{
+    display: flex;
+}
+
+.container-home header ul li{
+    list-style: none;
+    margin: 0 20px;
+}
+
+.container-home header ul li a{
+    position: relative;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 4px 3px;
+    color: #fff;
+}
+
+.container-home header ul li a.active{
+    color: rgb(54, 56, 223);
+}
+
+.toggle{
+    margin-top: 10px;
+    width: 40px;
+    height: 20px;
+    background-color: #fff;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+}
+
+.toggle-icon{
+    color: rgb(252 , 248 , 0);
+    color: rgb(17, 0, 252);
+}
+
+.toggle-ball{
+    background-color: black;
+    width: 18px;
+    height: 18px;
+    right: 1px;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    transition: 1s ease all;
+}
+
+/*menu btn*/
+
+.menu-btn{
+    color: white;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+.search-box{
+    
+    transform: translate(-50% , -50%);
+    background: #2f3640;
+    height: 40px;
+    border-radius: 40px;
+    padding: 10px;
+}
+
+.search-box:hover > .search
+{
+    width: 240px;
+    padding: 0 6px;
+}
+
+.search-box:hover > .search-btn
+{
+    background: #fff;
+}
+
+.search-btn {
+    color: #e84118;
+    float: right;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #2f3640;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search{
+    border:none;
+    background: none;
+    outline: none;
+    float: left;
+    padding: 0;
+    color: white;
+    font-size: 16px;
+    transition: 0.4s;
+    line-height: 40px;
+    width: 240px;
+}

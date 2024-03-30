@@ -1,0 +1,79 @@
+﻿@model Nhom4_WebsiteMuaBanQuanAo.Models.SanPham
+
+@{
+    ViewBag.Title = "AddSanPham";
+    Layout = "~/Views/Shared/_LayoutQuanLy.cshtml";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <form enctype="multipart/form-data">
+        <div class="form-horizontal" style="margin: 150px; margin-left:600px ;width:350px; height: 620px; border: 1px solid black; border-radius: 20px; padding: 10px; padding-left:50px;">
+            <h4>Thêm sản phẩm mới</h4>
+            <hr />
+            @Html.ValidationSummary(true)
+
+            <div class="form-group">
+                Mã sản phẩm
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.MaHang)
+                    @Html.ValidationMessageFor(model => model.MaHang, "Mã sản phẩm không được trống", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                Tên sản phẩm
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TenHang)
+                    @Html.ValidationMessageFor(model => model.TenHang, "Tên sản phẩm không được trống", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                Mã loại
+                @*<div class="col-md-10">
+                    @Html.EditorFor(model => model.MaLoai)
+                    @Html.ValidationMessageFor(model => model.MaLoai)
+                </div>*@               
+                <div class="col-md-10">
+                    @Html.DropDownListFor(model => model.MaLoai, new SelectList(ViewBag.Loai, "MaLoai", "TenLoai"))
+                    @Html.ValidationMessageFor(model => model.MaLoai)
+                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                Số lượng
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.SLKho)
+                    @Html.ValidationMessageFor(model => model.SLKho,"Chỉ nhận giá trị số", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                Đơn giá
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DonGia)
+                    @Html.ValidationMessageFor(model => model.DonGia, "Chỉ nhận giá trị số", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                Ảnh bìa
+                <div class="col-md-10">
+                   
+                    <input type="file" id="anhbia" name="anhbia" />
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Thêm" class="btn btn-danger" />
+                    @Html.ActionLink("Quay lại", "Index", "", new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+    </form>
+}

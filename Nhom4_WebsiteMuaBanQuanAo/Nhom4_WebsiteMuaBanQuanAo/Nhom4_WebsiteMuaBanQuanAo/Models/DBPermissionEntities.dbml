@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="DBPermission" Class="DBPermissionEntitiesDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=LAPTOP-DAC11E8M\SQLEXPRESS;Initial Catalog=DBPermission;Integrated Security=True" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="DBPermissionConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.permissions" Member="permissions">
+    <Type Name="permission">
+      <Column Name="id_permission" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="permission_name" Type="System.String" DbType="NVarChar(1000)" CanBeNull="true" />
+      <Association Name="permission_admin" Member="admins" ThisKey="id_permission" OtherKey="id_permission" Type="admin" />
+      <Association Name="permission_student" Member="students" ThisKey="id_permission" OtherKey="id_permission" Type="student" />
+      <Association Name="permission_teacher" Member="teachers" ThisKey="id_permission" OtherKey="id_permission" Type="teacher" />
+    </Type>
+  </Table>
+  <Table Name="dbo.admins" Member="admins">
+    <Type Name="admin">
+      <Column Name="id_admin" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="id_permission" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="permission_admin" Member="permission" ThisKey="id_permission" OtherKey="id_permission" Type="permission" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.students" Member="students">
+    <Type Name="student">
+      <Column Name="id_student" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="id_permission" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="permission_student" Member="permission" ThisKey="id_permission" OtherKey="id_permission" Type="permission" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.teachers" Member="teachers">
+    <Type Name="teacher">
+      <Column Name="id_teacher" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="password" Type="System.String" DbType="VarChar(10)" CanBeNull="true" />
+      <Column Name="name" Type="System.String" DbType="NVarChar(100)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="id_permission" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="permission_teacher" Member="permission" ThisKey="id_permission" OtherKey="id_permission" Type="permission" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

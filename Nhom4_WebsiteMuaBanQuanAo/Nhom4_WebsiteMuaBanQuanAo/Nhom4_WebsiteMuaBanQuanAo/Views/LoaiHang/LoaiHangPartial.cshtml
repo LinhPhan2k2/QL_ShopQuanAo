@@ -1,0 +1,13 @@
+﻿@using Nhom4_WebsiteMuaBanQuanAo.Models
+@model List<LOAI>
+<h5>DANH SÁCH THEO LOẠI SẢN PHẨM</h5>
+<ul class="list-group list-group-flush text-left">
+    @{
+        foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <a href="@Url.Action("SanPhamTheoLoai", "LoaiHang", new { @maloai = item.MALOAI })" style="text-transform:uppercase; text-decoration:none">@item.TENLOAI</a>
+            </li>
+        }
+    }
+</ul>
